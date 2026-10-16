@@ -1,0 +1,187 @@
+
+/* ===== FONDO GENERAL ===== */
+body {
+  margin: 0;
+  background: #101216;
+  color: #f1f5f9;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ===== FILTROS DE TIPOS ===== */
+.c-filtro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 18px 12px;
+}
+
+.c-filtro button {
+  padding: 8px 13px;
+  border: 1px solid #343944;
+  border-radius: 9px;
+  background: #20242d;
+  color: #dce2ec;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.c-filtro button:hover {
+  background: #353c49;
+  border-color: #818cf8;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ===== BUSCADOR ===== */
+.c-buscador {
+  display: block;
+  width: min(420px, calc(100% - 40px));
+  box-sizing: border-box;
+  margin: 10px auto 25px;
+  padding: 13px 16px;
+
+  background: #1b1f27;
+  color: #ffffff;
+  border: 1px solid #343944;
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
+
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.c-buscador::placeholder {
+  color: #858d9c;
+}
+
+.c-buscador:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.15);
+}
+
+/* ===== LISTA DE POKÉMON ===== */
+.c-lista {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(155px, 195px)
+  );
+  justify-content: center;
+  gap: 18px;
+  padding: 5px 20px 100px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* ===== TARJETAS ===== */
+.c-lista-pokemon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 245px;
+  padding: 14px;
+  box-sizing: border-box;
+
+  background: linear-gradient(145deg, #20242d, #181b22);
+  border: 1px solid #303541;
+  border-radius: 18px;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+
+  transition: transform 0.25s ease,
+              border-color 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.c-lista-pokemon:hover {
+  transform: translateY(-5px);
+  border-color: #818cf8;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== NÚMERO POKÉDEX ===== */
+.c-lista-pokemon p:first-child {
+  align-self: flex-end;
+  margin: 0;
+  color: #8993a5;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ===== NOMBRE ===== */
+.c-lista-pokemon p:nth-child(2) {
+  margin: 12px 0;
+  color: #f1f5f9;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* ===== IMAGEN ===== */
+.c-lista-pokemon img {
+  width: 125px;
+  height: 125px;
+  object-fit: contain;
+  margin-top: 5px;
+
+  filter: drop-shadow(0 5px 7px rgba(0, 0, 0, 0.25));
+  transition: transform 0.3s ease;
+}
+
+.c-lista-pokemon:hover img {
+  transform: scale(1.1);
+}
+
+/* ===== CARGANDO ===== */
+p {
+  transition: color 0.2s ease;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .c-filtro {
+    gap: 6px;
+    padding: 14px 10px;
+  }
+
+  .c-filtro button {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .c-lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 5px 12px 100px;
+  }
+
+  .c-lista-pokemon {
+    height: 205px;
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .c-lista-pokemon img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .c-lista-pokemon p:nth-child(2) {
+    font-size: 14px;
+  }
+
+  .c-buscador {
+    margin-bottom: 18px;
+  }
+}
